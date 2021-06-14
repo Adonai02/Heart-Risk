@@ -1,4 +1,5 @@
 #---------------------------1. Exportar los datos de MYSQL----------------------#
+library(tidyverse)
 library(DBI)
 library(ggplot2)
 connect_own<-function() {
@@ -64,7 +65,7 @@ data_model %>% add_column(columns_news)
 
 pred_probs <- predict(model, data, type = "response")
 
-pred_bool <- ifelse(pred_probs>0.5, 1, 0)
+pred_bool <- ifelse(pred_probs > 0.5, 1, 0)
 
 library(Metrics)
 accuracy(pred_bool, data$class_binomial)*100
