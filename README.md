@@ -120,3 +120,55 @@ distribution of it.
 ------------------------------------------------------------------------
 
 ## Logistic Regression
+
+    #> 
+    #> Call:
+    #> glm(formula = class_binomial ~ age + thalach + sex, family = "binomial", 
+    #>     data = data)
+    #> 
+    #> Deviance Residuals: 
+    #>     Min       1Q   Median       3Q      Max  
+    #> -2.2250  -0.8486  -0.4570   0.9043   2.1156  
+    #> 
+    #> Coefficients:
+    #>              Estimate Std. Error z value Pr(>|z|)    
+    #> (Intercept)  3.111610   1.607466   1.936   0.0529 .  
+    #> age          0.031886   0.016440   1.940   0.0524 .  
+    #> thalach     -0.040541   0.007073  -5.732 9.93e-09 ***
+    #> sexMale      1.491902   0.307193   4.857 1.19e-06 ***
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> 
+    #> (Dispersion parameter for binomial family taken to be 1)
+    #> 
+    #>     Null deviance: 417.98  on 302  degrees of freedom
+    #> Residual deviance: 332.85  on 299  degrees of freedom
+    #> AIC: 340.85
+    #> 
+    #> Number of Fisher Scoring iterations: 4
+
+-   **Conclusion of Model**
+
+------------------------------------------------------------------------
+
+## Useful information about the model
+
+    #> Loading required package: broom
+    #> Waiting for profiling to be done...
+    #> # A tibble: 4 x 8
+    #>   term        estimate std.error statistic       p.value     OR `2.5 %` `97.5 %`
+    #>   <chr>          <dbl>     <dbl>     <dbl>         <dbl>  <dbl>   <dbl>    <dbl>
+    #> 1 (Intercept)   3.11     1.61         1.94 0.0529        22.5     0.995  555.   
+    #> 2 age           0.0319   0.0164       1.94 0.0524         1.03    1.00     1.07 
+    #> 3 thalach      -0.0405   0.00707     -5.73 0.00000000993  0.960   0.947    0.973
+    #> 4 sexMale       1.49     0.307        4.86 0.00000119     4.45    2.47     8.27
+
+-   **Conclusion of Model information**
+
+------------------------------------------------------------------------
+
+## Predictive probabilities of the model
+
+    #> [1] 70.9571
+
+-   **Conclusion of Predictive model and accuracy**

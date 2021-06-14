@@ -139,3 +139,48 @@ ggplot(data, aes(x=hd, y=thalach) ) + geom_boxplot() + ggtitle("Barplot Thalach 
 
 ## Logistic Regression 
 
+```{r echo=FALSE}
+model <- glm(formula = class_binomial ~ age + thalach + sex,
+             data = data, family = "binomial")
+
+summary(model)
+
+```
+
+* **Conclusion of Model**
+
+***
+
+## Useful information about the model
+
+```{r echo=FALSE}
+require(broom)
+
+data_model <- model%>% tidy()
+
+column_new <- exp(cbind(OR = coef(model), confint(model)))
+columns_news <- as_tibble(column_new)
+data_model %>% add_column(columns_news)
+
+
+```
+
+
+* **Conclusion of Model information**
+
+
+***
+
+## Predictive probabilities of the model
+
+```{r echo=FALSE}
+pred_probs <- predict(model, data, type = "response")
+
+pred_bool <- ifelse(pred_probs > 0.5, 1, 0)
+
+library(Metrics)
+accuracy(pred_bool, data$class_binomial)*100
+
+```
+
+* **Conclusion of Predictive model and accuracy**
