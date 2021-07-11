@@ -7,13 +7,13 @@ connect_own<-function() {
   options(mysql = list(
     "host" = "localhost", 
     "port" = 3306,
-    "user" = "abel",
-    "password" = "T77vqlra$"
+    "user" = "adonai",
+    "password" = "huevos123"
     
   ))
   
   
-  db <- RMySQL::dbConnect(RMySQL::MySQL(), dbname = "PROYECTO_5",
+  db <- RMySQL::dbConnect(RMySQL::MySQL(), dbname = "Curso_R",
                           host = options()$mysql$host, 
                           port = options()$mysql$port, user = options()$mysql$user, 
                           password = options()$mysql$password)  

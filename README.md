@@ -25,9 +25,28 @@ the head of the dataset is following:
     #> 5     0
     #> 6     0
 
-Let’s describe the variables:
+Let’s describe some variables:
 
--   **Description’s variables**
+-   **Class:** This variable classifies from 0 to 4 the diagnostic or
+    probably of having the disease, where 0 means No sick, 1, 2 and 3
+    means little probably having disease and 4 means a lot of probably
+    having disease.
+
+-   **Thalach:** Maximum blood pressure found.
+
+-   **Chol:** Cholesterol in mg/dl.
+
+-   **Fbs:** Blood pressure Fasting.
+
+-   **Trestbps:** Blood pressure resting.
+
+-   **Testecg:** Induced blood acceleration.
+
+-   **Oldpeak:** Induced depression for relative exercise to test.
+
+-   **Sex:** The sex of the people classify in Female and Male.
+
+-   **Age:** The age of the people.
 
 Once We known the decription of the variables, now, as we want to know
 if a person might have Heart disease or not, so, We will tranform to
@@ -61,8 +80,8 @@ now, let’s identify the **Relevant** variables.
 -   Recommendation: Review concepts of t-test (Welch’s t-test) and
     Chi-squared to identify relevant variables.
 
-**a)** We test the Chi function between the variables *Sex* and
-*class\_binomial*, we obtain.
+**a)** We test the Chi function between the variables *Sex* and *Class
+binomial*, we obtain.
 
     #> 
     #>  Pearson's Chi-squared test with Yates' continuity correction
@@ -71,7 +90,7 @@ now, let’s identify the **Relevant** variables.
     #> X-squared = 22.043, df = 1, p-value = 2.667e-06
 
 **b)** We test the t-test function between the variables *Age* and
-*class\_binomial*, we obtain.
+*Class binomial*, we obtain.
 
     #> 
     #>  Welch Two Sample t-test
@@ -86,7 +105,7 @@ now, let’s identify the **Relevant** variables.
     #> 54.4389439  0.4587459
 
 **c)** We test the t-test function between the variables *Thalach* and
-*class\_binomial*, we obtain.
+*Class binomial*, we obtain.
 
     #> 
     #>  Welch Two Sample t-test
@@ -100,7 +119,8 @@ now, let’s identify the **Relevant** variables.
     #>   mean of x   mean of y 
     #> 149.6072607   0.4587459
 
--   **Conclusion of tests**
+We can see the p-values of the three tests, and we can observe that its
+values are very small (which this is very excellent).
 
 ------------------------------------------------------------------------
 
@@ -115,7 +135,10 @@ distribution of it.
 
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
--   **Conclusion of plots**
+We can see that the range between 50 and 60 age are important for having
+a disease, the same thing happen with the range between 125 and 150
+maximum blood pressure, on the other hand the sex doesn’t care too much,
+We can say that the sex variable it’s independent.
 
 ------------------------------------------------------------------------
 
@@ -147,7 +170,10 @@ distribution of it.
     #> 
     #> Number of Fisher Scoring iterations: 4
 
--   **Conclusion of Model**
+We note that, in our model, the *SexMale* and *Thalach* variables stand
+out, their p-values are tinny but, the coefficient of *Thalach* is
+almost zero on another hand with sexMale, while *SexMale’s*’ coefficient
+is positive, obviously, the model can be much better.
 
 ------------------------------------------------------------------------
 
