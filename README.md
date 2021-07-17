@@ -1,7 +1,14 @@
 
 # Heart Risk
 
-The goal of Heart-Risk is to …
+The goal of Heart-Risk is to do an analysis to know which factors are
+associates with our variable of interest, in this case, we want to know
+which variables affect the risk of having a heart disease. We’ll
+elaborate a logistic regression model, and we’ll see the accuracy of the
+model with some variables taken with a simple intuition and logic, doing
+this, we will be forced to understand the context and just don’t be so
+dependent of the functions that we already know, and above all, do
+something (a little) different.
 
 ------------------------------------------------------------------------
 
@@ -189,7 +196,15 @@ is positive, obviously, the model can be much better.
     #> 3 thalach      -0.0405   0.00707     -5.73 0.00000000993  0.960   0.947    0.973
     #> 4 sexMale       1.49     0.307        4.86 0.00000119     4.45    2.47     8.27
 
--   **Conclusion of Model information**
+Once We have some significance values of the model, like, p-values,
+standard deviations, Odds ratios and its confidence intervals, We can
+lead to some conclusions. We note that, for example, the age doesn’t
+keep much association with the dependent variable, it’s because the OR
+is almost equal to 1 and the confidence interval is 1.00 - 1.07, that
+indicates the must be in this interval, On another hand, We notice in
+*sexMale* the OR is greater than 1, which it means that the association
+between the dependent variable is high, and the range of confidence
+interval it’s not too higher.
 
 ------------------------------------------------------------------------
 
@@ -197,4 +212,11 @@ is positive, obviously, the model can be much better.
 
     #> [1] 70.9571
 
--   **Conclusion of Predictive model and accuracy**
+We observe the accuracy of the model it’s not bad, but, it’s not the
+result that We expected, is obviously that the model can be better, and
+it’s because We didn’t do an in-depth analysis, We led for our
+intuitions about what variable will fit better in the model and the
+accuracy it’s not too bad taking this into account. Without doubt, We
+have to improve the model or find another that fit better for our data.
+The learning We take away from this is gold, and We’ll serve to make
+better models or take better decisions about the variables.
